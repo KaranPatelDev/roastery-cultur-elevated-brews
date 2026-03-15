@@ -62,7 +62,30 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Cloudflare Pages
+
+This project is ready for Cloudflare Pages deployment.
+
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Node version: `20` or newer recommended
+- SPA routing fallback: configured via `public/_redirects`
+
+If deploying from the Cloudflare dashboard:
+
+1. Import this GitHub repository into Cloudflare Pages.
+2. Set the framework preset to `Vite` if prompted.
+3. Use `npm run build` as the build command.
+4. Use `dist` as the output directory.
+5. Deploy.
+
+If deploying with Wrangler CLI:
+
+```sh
+npm install
+npm run build
+npx wrangler pages deploy dist --project-name roastery-cultur-elevated-brews
+```
 
 ## Can I connect a custom domain to my Lovable project?
 
