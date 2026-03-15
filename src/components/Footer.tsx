@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
-import { Coffee, Instagram, Facebook, MapPin, Phone, Clock, Mail } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Coffee, Instagram, Facebook, MapPin, Phone, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="border-t border-border bg-card/80 backdrop-blur-md">
       <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
@@ -21,10 +19,10 @@ const Footer = () => {
               Experience specialty coffee culture in Ahmedabad.
             </p>
             <div className="flex gap-4 mt-6">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
+              <a href="https://instagram.com" target="_blank" rel="noreferrer noopener" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer noopener" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook">
                 <Facebook className="h-5 w-5" />
               </a>
             </div>
@@ -35,11 +33,11 @@ const Footer = () => {
             <h4 className="font-display text-lg font-semibold text-foreground mb-4">Explore</h4>
             <div className="flex flex-col gap-3">
               {[
-                { to: "/menu", label: "Our Menu" },
-                { to: "/about", label: "Our Story" },
-                { to: "/gallery", label: "Gallery" },
-                { to: "/reserve", label: "Reserve a Table" },
-                { to: "/contact", label: "Contact Us" },
+                { to: "/#menu", label: "Our Menu" },
+                { to: "/#about", label: "Our Story" },
+                { to: "/#gallery", label: "Gallery" },
+                { to: "/#reserve", label: "Reserve a Table" },
+                { to: "/#location", label: "Location" },
               ].map((link) => (
                 <Link
                   key={link.to}
@@ -75,23 +73,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <h4 className="font-display text-lg font-semibold text-foreground mb-4">Newsletter</h4>
-            <p className="text-muted-foreground text-sm mb-4">
-              Get updates on new brews, events & exclusive offers.
-            </p>
-            <div className="flex gap-2">
-              <Input
-                type="email"
-                placeholder="Your email"
-                className="bg-muted border-border text-foreground text-sm"
-              />
-              <Button size="sm" className="shrink-0">
-                <Mail className="h-4 w-4" />
-              </Button>
-            </div>
-          </div>
         </div>
 
         <div className="border-t border-border mt-12 pt-8 text-center">
